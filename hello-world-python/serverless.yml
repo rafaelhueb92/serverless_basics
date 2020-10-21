@@ -1,0 +1,18 @@
+service: hello-world-python
+
+provider:
+  name: aws
+  runtime: python3.8
+  memorySize: 128
+  timeout: 3
+  region: sa-east-1
+  
+functions:
+  hello-short-timeout:
+    handler: handler.hello
+    memorySize: 128
+    timeout: 3
+  hello-long-timeout:
+    handler: handler.hello
+    memorySize: 256
+    timeout: 6
